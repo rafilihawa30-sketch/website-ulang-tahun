@@ -1,87 +1,177 @@
-// Pesan Ucapan
-const message = "Selamat Ulang Tahun! Semoga panjang umur, sehat selalu, dan semua impianmu tercapai! Terima kasih sudah menjadi bagian terindah dalam hidupku. 💖🎉";
+// ================================
+// WEBSITE ULANG TAHUN
+// ================================
 
-const typedTextElement = document.getElementById("typed-text");
-const btnMusic = document.getElementById("btnMusic");
-const bgMusic = document.getElementById("bgMusic");
-const envelope = document.getElementById("envelope");
-const btnSurprise = document.getElementById("btnSurprise");
-const heartsContainer = document.getElementById("heartsContainer");
+document.addEventListener("DOMContentLoaded", function () {
 
-let charIndex = 0;
-let isPlaying = false;
-let isTyped = false;
+    const opening = document.getElementById("opening");
+    const mainContent = document.getElementById("mainContent");
+    const menu = document.querySelector(".menu-section");
 
-// Toggle Musik
-btnMusic.addEventListener("click", () => {
-  if (isPlaying) {
-    bgMusic.pause();
-    btnMusic.innerText = "🎵 Putar Musik";
-  } else {
-    bgMusic.play();
-    btnMusic.innerText = "🔊 Musik On";
-  }
-  isPlaying = !isPlaying;
-});
+    const sections = document.querySelectorAll(".content-section");
 
-// Buka Amplop Surat & Efek Ketik
-envelope.addEventListener("click", () => {
-  envelope.classList.toggle("open");
-  
-  if (!isTyped && envelope.classList.contains("open")) {
-    typeMessage();
-    isTyped = true;
-  }
-});
+    // ================================
+    // BUKA WEBSITE
+    // ================================
 
-function typeMessage() {
-  if (charIndex < message.length) {
-    typedTextElement.innerHTML += message.charAt(charIndex);
-    charIndex++;
-    setTimeout(typeMessage, 40);
-  }
-}
+    window.bukaWebsite = function () {
 
-// Tombol Kejutan / Confetti
-btnSurprise.addEventListener("click", (e) => {
-  e.stopPropagation();
-  confetti({
-    particleCount: 150,
-    spread: 90,
-    origin: { y: 0.6 }
-  });
-});
+        if (opening) {
+            opening.classList.add("hidden");
+        }
 
-// Efek Partikel Hati Melayang
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart-particle");
-  heart.innerHTML = "❤";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 3 + 3 + "s";
-  heartsContainer.appendChild(heart);
+        if (mainContent) {
+            mainContent.classList.remove("hidden");
+        }
 
-  setTimeout(() => { heart.remove(); }, 6000);
-}
-setInterval(createHeart, 350);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
-// Pop-up Zoom Foto jika diklik
-const modal = document.getElementById("imageModal");
-const modalImg = document.getElementById("imgModalSrc");
-const closeModal = document.querySelector(".close");
 
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("click", (e) => {
-    e.stopPropagation();
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-  });
-});
+    // ================================
+    // SEMBUNYIKAN SEMUA BAGIAN
+    // ================================
 
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+    function sembunyikanSemua() {
 
-modal.addEventListener("click", () => {
-  modal.style.display = "none";
+        sections.forEach(function (section) {
+            section.classList.add("hidden");
+        });
+
+    }
+
+
+    // ================================
+    // BUKA BAGIAN
+    // ================================
+
+    window.bukaBagian = function (id) {
+
+        sembunyikanSemua();
+
+        // Sembunyikan menu utama
+        if (menu) {
+            menu.classList.add("hidden");
+        }
+
+        const section = document.getElementById(id);
+
+        if (!section) {
+            console.error("Bagian tidak ditemukan:", id);
+            return;
+        }
+
+        section.classList.remove("hidden");
+
+        // Pastikan mulai dari atas
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+
+        // Animasi ulang
+        section.style.animation = "none";
+
+        void section.offsetWidth;
+
+        section.style.animation = "appear .6s ease";
+    };
+
+
+    // ================================
+    // KEMBALI KE MENU
+    // ================================
+
+    window.kembali = function () {
+
+        sembunyikanSemua();
+
+        if (menu) {
+            menu.classList.remove("hidden");
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+    };
+
+
+    // ================================
+    // PESAN RAHASIA
+    // ================================
+
+    window.surprise = function () {
+
+        const pesan = document.getElementById("surpriseText");
+
+        if (!pesan) return;
+
+        pesan.innerHTML = `
+            <div class="secret-message">
+                ❤️ Terima kasih sudah hadir dalam hidupku.
+                <br><br>
+                Semoga di usia yang baru ini,
+                semua impian dan harapanmu
+                perlahan menjadi kenyataan.
+                <br><br>
+                Semoga kamu selalu bahagia,
+                sehat, dan dikelilingi orang-orang
+                yang menyayangimu.
+                <br><br>
+                <strong>Happy Birthday! 🎂❤️</strong>
+            </div>
+        `;
+
+    };
+
+
+    // ================================
+    // HATI TERBANG
+    // ================================
+
+    function buatHati() {
+
+        const container = document.getElementById("hearts");
+
+        if (!container) return;
+
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        const bentuk = [
+            "❤️",
+            "💕",
+            "💗",
+            "💖",
+            "✨"
+        ];
+
+        heart.textContent =
+            bentuk[Math.floor(Math.random() * bentuk.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            12 + Math.random() * 22 + "px";
+
+        heart.style.animationDuration =
+            5 + Math.random() * 6 + "s";
+
+        container.appendChild(heart);
+
+        setTimeout(function () {
+            heart.remove();
+        }, 12000);
+    }
+
+
+    // Hati muncul setiap 700ms
+    setInterval(buatHati, 700);
+
 });
