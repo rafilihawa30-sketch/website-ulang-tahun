@@ -1,29 +1,11 @@
-/* Reset & Variabel */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #feada6 100%);
-  overflow: hidden;
-  position: relative;
-}
-
-/* Container Hati Melayang */
+/* Background Hati - tambahkan pointer-events: none agar tidak menghalangi klik */
 .hearts-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: none; /* MEMASTIKAN KLIK BISA TEMBUS KE ELEMEN DI BAWAHNYA */
   z-index: 1;
 }
 
@@ -33,116 +15,38 @@ body {
   font-size: 1.5rem;
   animation: floatUp 6s linear infinite;
   opacity: 0.7;
+  pointer-events: none; /* Mencegah partikel hati tersentuh/diklik */
 }
 
-@keyframes floatUp {
-  0% {
-    transform: translateY(0) scale(0.8) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-110vh) scale(1.2) rotate(360deg);
-    opacity: 0;
-  }
+/* Navigasi Musik di atas */
+.top-nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999; /* Dibuat paling atas agar selalu bisa diklik */
 }
 
-/* Glassmorphism Card Utama */
-.card {
+/* Container Utama */
+.main-wrapper {
+  max-width: 900px;
+  margin: 80px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   position: relative;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.35);
+  z-index: 10; /* Berada di atas background */
+}
+
+.section-card {
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 24px;
-  padding: 40px 30px;
-  width: 90%;
-  max-width: 420px;
+  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1.2s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.profile-frame {
-  margin: 0 auto 20px;
-  width: 90px;
-  height: 90px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.2);
-  animation: pulse 2s infinite;
-}
-
-.avatar {
-  font-size: 3rem;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-.title {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  color: #d81b60;
-  margin-bottom: 15px;
-}
-
-.message-box {
-  min-height: 90px;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 15px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  font-size: 0.95rem;
-  color: #4a4a4a;
-  line-height: 1.6;
-}
-
-/* Tombol */
-.action-buttons {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
-.btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: #d81b60;
-  color: white;
-  box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
-}
-
-.btn-primary:hover {
-  background: #b71c1c;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.8);
-  color: #333;
-}
-
-.btn-secondary:hover {
-  background: #ffffff;
-  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 10;
 }
