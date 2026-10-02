@@ -1,238 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday ❤️</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday! 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Google untuk tampilan elegan -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Canvas Confetti untuk efek kembang api -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-
 <body>
 
-<!-- PEMBUKA -->
-<section id="opening" class="opening">
-    <div class="opening-content">
-        <div class="heart">❤️</div>
-        <p class="small-text">A special day for someone special</p>
-        <h1>Happy Birthday</h1>
-        <h2>Untuk Kamu ❤️</h2>
+  <!-- Musik Latar (Opsional: ganti link mp3 sesuai keinginan) -->
+  <audio id="bg-music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
 
-        <p>
-            Aku punya sedikit kejutan<br>
-            yang ingin aku berikan untukmu.
-        </p>
+  <!-- Container Efek Hati Melayang -->
+  <div class="hearts-container" id="heartsContainer"></div>
 
-        <button onclick="bukaWebsite()">💌 Buka Surprise</button>
+  <!-- Card Utama -->
+  <main class="card">
+    <div class="profile-frame">
+      <!-- Ganti foto jika ada -->
+      <div class="avatar">🎂</div>
     </div>
-</section>
-
-
-<!-- WEBSITE UTAMA -->
-<main id="mainContent" class="hidden">
-
-    <header>
-        <div class="heart">❤️</div>
-        <h1>Happy Birthday</h1>
-        <p>Untuk seseorang yang sangat berarti</p>
-    </header>
-
-
-    <!-- MENU -->
-    <section class="menu">
-
-        <button onclick="bukaBagian('surat')">
-            💌<br>
-            Surat Untukmu
-        </button>
-
-        <button onclick="bukaBagian('foto')">
-            📸<br>
-            Foto Kita
-        </button>
-
-        <button onclick="bukaBagian('musik')">
-            🎵<br>
-            Musik
-        </button>
-
-        <button onclick="bukaBagian('pesan')">
-            🎁<br>
-            Pesan Rahasia
-        </button>
-
-    </section>
-
-
-    <!-- SURAT -->
-    <section id="surat" class="page-section hidden">
-
-        <button class="back" onclick="kembali()">← Kembali</button>
-
-        <h2>💌 Surat Untukmu</h2>
-
-        <div class="card">
-            <p>Selamat ulang tahun, sayang ❤️</p>
-
-            <p>
-                Semoga di usia yang baru ini kamu selalu
-                diberikan kebahagiaan, kesehatan,
-                dan banyak hal baik.
-            </p>
-
-            <p>
-                Terima kasih sudah menjadi seseorang
-                yang begitu berarti.
-            </p>
-
-            <p>
-                Semoga kita bisa terus membuat
-                banyak kenangan indah bersama.
-            </p>
-
-            <p>
-                Aku berharap hari ini bisa menjadi
-                salah satu hari yang paling indah untukmu. ❤️
-            </p>
-        </div>
-
-    </section>
-
-
-    <!-- FOTO -->
-    <section id="foto" class="page-section hidden">
-
-        <button class="back" onclick="kembali()">← Kembali</button>
-
-        <h2>📸 Our Memories</h2>
-
-        <p>Pilih bagian kenangan yang ingin kamu lihat ❤️</p>
-
-        <div class="photo-menu">
-
-            <button onclick="bukaAlbum('album1')">
-                📷 Memories 1
-                <small>Foto 1–4</small>
-            </button>
-
-            <button onclick="bukaAlbum('album2')">
-                📷 Memories 2
-                <small>Foto 5–8</small>
-            </button>
-
-            <button onclick="bukaAlbum('album3')">
-                📷 Memories 3
-                <small>Foto 9–12</small>
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ALBUM 1 -->
-    <section id="album1" class="page-section hidden">
-
-        <button class="back" onclick="bukaBagian('foto')">← Kembali</button>
-
-        <h2>📷 Memories 1</h2>
-
-        <div class="gallery">
-            <img src="foto1.jpeg" alt="Kenangan 1">
-            <img src="foto2.jpeg" alt="Kenangan 2">
-            <img src="foto3.jpeg" alt="Kenangan 3">
-            <img src="foto4.jpeg" alt="Kenangan 4">
-        </div>
-
-    </section>
-
-
-    <!-- ALBUM 2 -->
-    <section id="album2" class="page-section hidden">
-
-        <button class="back" onclick="bukaBagian('foto')">← Kembali</button>
-
-        <h2>📷 Memories 2</h2>
-
-        <div class="gallery">
-            <img src="foto5.jpeg" alt="Kenangan 5">
-            <img src="foto6.jpeg" alt="Kenangan 6">
-            <img src="foto7.jpeg" alt="Kenangan 7">
-            <img src="foto8.jpeg" alt="Kenangan 8">
-        </div>
-
-    </section>
-
-
-    <!-- ALBUM 3 -->
-    <section id="album3" class="page-section hidden">
-
-        <button class="back" onclick="bukaBagian('foto')">← Kembali</button>
-
-        <h2>📷 Memories 3</h2>
-
-        <div class="gallery">
-            <img src="foto9.jpeg" alt="Kenangan 9">
-            <img src="foto10.jpeg" alt="Kenangan 10">
-            <img src="foto11.jpeg" alt="Kenangan 11">
-            <img src="foto12.jpeg" alt="Kenangan 12">
-        </div>
-
-    </section>
-
-
-    <!-- MUSIK -->
-    <section id="musik" class="page-section hidden">
-
-        <button class="back" onclick="kembali()">← Kembali</button>
-
-        <h2>🎵 Lagu Untukmu</h2>
-
-        <div class="card">
-            <p>
-                Sebuah lagu untuk menemani
-                kenangan kita ❤️
-            </p>
-
-            <audio controls loop>
-    <source src="lagu.mp3" type="audio/mpeg">
-    Browser tidak mendukung audio.
-</audio>
-        </div>
-
-    </section>
-
-
-    <!-- PESAN RAHASIA -->
-    <section id="pesan" class="page-section hidden">
-
-        <button class="back" onclick="kembali()">← Kembali</button>
-
-        <h2>🎁 One More Thing...</h2>
-
-        <div class="card">
-
-            <p>
-                Ada satu pesan yang ingin aku sampaikan.
-            </p>
-
-            <button onclick="surprise()">
-                ❤️ Buka Pesan
-            </button>
-
-            <p id="surpriseText"></p>
-
-        </div>
-
-    </section>
-
-
-    <footer>
-        ❤️ Happy Birthday ❤️
-    </footer>
-
-</main>
-
-<script src="script.js"></script>
-
+    
+    <h1 class="title">Selamat Ulang Tahun! ✨</h1>
+    
+    <!-- Teks Pesan Efek Ketik -->
+    <div class="message-box">
+      <p id="typed-text"></p>
+    </div>
+
+    <div class="action-buttons">
+      <button id="btnSurprise" class="btn btn-primary">🎁 Buka Kejutan</button>
+      <button id="btnMusic" class="btn btn-secondary">🎵 Musik: Off</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
