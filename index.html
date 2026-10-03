@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>For Someone Special ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- BACKGROUND -->
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
     <div class="background">
         <div class="orb orb1"></div>
         <div class="orb orb2"></div>
@@ -18,14 +24,22 @@
 
     <div id="hearts"></div>
 
-    <!-- OPENING -->
+
+    <!-- =========================
+         OPENING
+    ========================== -->
+
     <section id="opening" class="opening">
 
         <div class="opening-card">
 
-            <div class="big-heart">❤️</div>
+            <div class="big-heart">
+                ❤️
+            </div>
 
-            <p class="eyebrow">A SPECIAL DAY FOR YOU</p>
+            <p class="eyebrow">
+                A SPECIAL DAY FOR YOU
+            </p>
 
             <h1>
                 Happy<br>
@@ -36,7 +50,9 @@
                 Ada sesuatu yang aku siapkan khusus untukmu...
             </p>
 
-            <button class="main-button" onclick="bukaWebsite()">
+            <button
+                class="main-button"
+                onclick="bukaWebsite()">
                 💌 Buka Surprise
             </button>
 
@@ -45,10 +61,17 @@
     </section>
 
 
-    <!-- MAIN -->
+    <!-- =========================
+         MAIN WEBSITE
+    ========================== -->
+
     <main id="mainContent" class="hidden">
 
-        <!-- HERO -->
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
         <header class="hero">
 
             <div class="hero-content">
@@ -75,7 +98,10 @@
         </header>
 
 
-        <!-- MENU -->
+        <!-- =========================
+             MENU
+        ========================== -->
+
         <section class="menu-section">
 
             <p class="section-label">
@@ -86,30 +112,91 @@
                 Something <span>Special</span> For You
             </h2>
 
+
             <div class="menu-grid">
 
-                <button class="menu-card" onclick="bukaBagian('surat')">
-                    <span class="menu-icon">💌</span>
-                    <strong>Surat Untukmu</strong>
-                    <small>Beberapa kata dari hati</small>
+
+                <!-- SURAT -->
+
+                <button
+                    class="menu-card"
+                    onclick="bukaBagian('surat')">
+
+                    <span class="menu-icon">
+                        💌
+                    </span>
+
+                    <strong>
+                        Surat Untukmu
+                    </strong>
+
+                    <small>
+                        Beberapa kata dari hati
+                    </small>
+
                 </button>
 
-                <button class="menu-card" onclick="bukaBagian('foto')">
-                    <span class="menu-icon">📸</span>
-                    <strong>Our Memories</strong>
-                    <small>Kenangan yang tersimpan</small>
+
+                <!-- FOTO -->
+
+                <button
+                    class="menu-card"
+                    onclick="bukaBagian('foto')">
+
+                    <span class="menu-icon">
+                        📸
+                    </span>
+
+                    <strong>
+                        Our Memories
+                    </strong>
+
+                    <small>
+                        Kenangan yang tersimpan
+                    </small>
+
                 </button>
 
-                <button class="menu-card" onclick="bukaBagian('musik')">
-                    <span class="menu-icon">🎵</span>
-                    <strong>Our Song</strong>
-                    <small>Lagu untuk menemani</small>
+
+                <!-- LAGU -->
+
+                <button
+                    class="menu-card"
+                    onclick="bukaBagian('musik')">
+
+                    <span class="menu-icon">
+                        🎵
+                    </span>
+
+                    <strong>
+                        Our Song
+                    </strong>
+
+                    <small>
+                        Lagu untuk menemani
+                    </small>
+
                 </button>
 
-                <button class="menu-card" onclick="bukaBagian('pesan')">
-                    <span class="menu-icon">🎁</span>
-                    <strong>Secret Message</strong>
-                    <small>Ada pesan rahasia</small>
+
+                <!-- PESAN -->
+
+                <button
+                    class="menu-card"
+                    onclick="bukaBagian('pesan')">
+
+                    <span class="menu-icon">
+                        🎁
+                    </span>
+
+                    <strong>
+                        Secret Message
+                    </strong>
+
+                    <small>
+                        Ada pesan rahasia
+                    </small>
+
                 </button>
 
             </div>
@@ -117,47 +204,72 @@
         </section>
 
 
-        <!-- SURAT -->
-        <section id="surat" class="content-section hidden">
+        <!-- =========================
+             SURAT
+        ========================== -->
 
-            <button class="back-button" onclick="kembali()">
+        <section
+            id="surat"
+            class="content-section hidden">
+
+
+            <button
+                class="back-button"
+                onclick="kembali()">
+
                 ← Kembali
+
             </button>
+
 
             <div class="content-card">
 
-                <div class="section-icon">💌</div>
+
+                <div class="section-icon">
+                    💌
+                </div>
+
 
                 <p class="section-label">
                     A LETTER FOR YOU
                 </p>
 
-                <h2>Untuk Kamu ❤️</h2>
+
+                <h2>
+                    Untuk Kamu ❤️
+                </h2>
+
 
                 <div class="letter">
 
-                    <p>Selamat ulang tahun, sayang ❤️</p>
-
                     <p>
-                        Di hari spesial ini, aku ingin mengucapkan
-                        terima kasih karena sudah menjadi bagian
-                        dari cerita yang begitu berarti.
+                        Selamat ulang tahun, sayang ❤️
                     </p>
 
                     <p>
-                        Semoga di usia yang baru ini kamu selalu
-                        dikelilingi kebahagiaan, kesehatan,
-                        dan hal-hal baik yang kamu impikan.
+                        Di hari spesial ini, aku ingin
+                        mengucapkan terima kasih karena
+                        sudah menjadi bagian dari cerita
+                        yang begitu berarti.
                     </p>
 
                     <p>
-                        Semoga setiap langkahmu membawa kamu
-                        semakin dekat dengan semua impianmu.
+                        Semoga di usia yang baru ini kamu
+                        selalu dikelilingi kebahagiaan,
+                        kesehatan, dan hal-hal baik yang
+                        kamu impikan.
                     </p>
 
                     <p>
-                        Dan semoga hari ini menjadi salah satu
-                        kenangan indah yang selalu kamu ingat. ❤️
+                        Semoga setiap langkahmu membawa
+                        kamu semakin dekat dengan semua
+                        impianmu.
+                    </p>
+
+                    <p>
+                        Dan semoga hari ini menjadi salah
+                        satu kenangan indah yang selalu
+                        kamu ingat. ❤️
                     </p>
 
                 </div>
@@ -167,88 +279,146 @@
         </section>
 
 
-        <!-- FOTO -->
-        <section id="foto" class="content-section hidden">
+        <!-- =========================
+             FOTO
+        ========================== -->
 
-            <button class="back-button" onclick="kembali()">
+        <section
+            id="foto"
+            class="content-section hidden">
+
+
+            <button
+                class="back-button"
+                onclick="kembali()">
+
                 ← Kembali
+
             </button>
+
 
             <div class="content-card">
 
-                <div class="section-icon">📸</div>
+
+                <div class="section-icon">
+                    📸
+                </div>
+
 
                 <p class="section-label">
                     OUR MEMORIES
                 </p>
 
-                <h2>12 Moments ❤️</h2>
+
+                <h2>
+                    12 Moments ❤️
+                </h2>
+
 
                 <p class="description">
-                    Beberapa kenangan yang ingin selalu disimpan.
+                    Beberapa kenangan yang ingin
+                    selalu disimpan.
                 </p>
+
 
                 <div class="gallery">
 
+
                     <div class="photo-card">
-                        <img src="foto1.jpeg" alt="Kenangan 1">
+                        <img
+                            src="foto1.jpeg"
+                            alt="Kenangan 1">
                         <span>01</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto2.jpeg" alt="Kenangan 2">
+                        <img
+                            src="foto2.jpeg"
+                            alt="Kenangan 2">
                         <span>02</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto3.jpeg" alt="Kenangan 3">
+                        <img
+                            src="foto3.jpeg"
+                            alt="Kenangan 3">
                         <span>03</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto4.jpeg" alt="Kenangan 4">
+                        <img
+                            src="foto4.jpeg"
+                            alt="Kenangan 4">
                         <span>04</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto5.jpeg" alt="Kenangan 5">
+                        <img
+                            src="foto5.jpeg"
+                            alt="Kenangan 5">
                         <span>05</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto6.jpeg" alt="Kenangan 6">
+                        <img
+                            src="foto6.jpeg"
+                            alt="Kenangan 6">
                         <span>06</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto7.jpeg" alt="Kenangan 7">
+                        <img
+                            src="foto7.jpeg"
+                            alt="Kenangan 7">
                         <span>07</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto8.jpeg" alt="Kenangan 8">
+                        <img
+                            src="foto8.jpeg"
+                            alt="Kenangan 8">
                         <span>08</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto9.jpeg" alt="Kenangan 9">
+                        <img
+                            src="foto9.jpeg"
+                            alt="Kenangan 9">
                         <span>09</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto10.jpeg" alt="Kenangan 10">
+                        <img
+                            src="foto10.jpeg"
+                            alt="Kenangan 10">
                         <span>10</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto11.jpeg" alt="Kenangan 11">
+                        <img
+                            src="foto11.jpeg"
+                            alt="Kenangan 11">
                         <span>11</span>
                     </div>
 
+
                     <div class="photo-card">
-                        <img src="foto12.jpeg" alt="Kenangan 12">
+                        <img
+                            src="foto12.jpeg"
+                            alt="Kenangan 12">
                         <span>12</span>
                     </div>
+
 
                 </div>
 
@@ -257,44 +427,83 @@
         </section>
 
 
-        <!-- MUSIK -->
-        <section id="musik" class="content-section hidden">
+        <!-- =========================
+             LAGU
+        ========================== -->
 
-            <button class="back-button" onclick="kembali()">
+        <section
+            id="musik"
+            class="content-section hidden">
+
+
+            <button
+                class="back-button"
+                onclick="kembali()">
+
                 ← Kembali
+
             </button>
+
 
             <div class="content-card music-card">
 
-                <div class="section-icon">🎵</div>
+
+                <div class="section-icon">
+                    🎵
+                </div>
+
 
                 <p class="section-label">
                     A SONG FOR YOU
                 </p>
 
-                <h2>Our Song ❤️</h2>
+
+                <h2>
+                    Our Song ❤️
+                </h2>
+
 
                 <p class="description">
-                    Putar lagu ini sambil menikmati semua
-                    kenangan yang ada.
+                    Putar lagu ini sambil menikmati
+                    semua kenangan yang ada.
                 </p>
 
+
                 <div class="music-player">
+
 
                     <div class="music-disc">
                         💿
                     </div>
 
+
                     <div class="music-info">
-                        <h3>Special Song</h3>
-                        <p>For someone special ❤️</p>
+
+                        <h3>
+                            Special Song
+                        </h3>
+
+                        <p>
+                            For someone special ❤️
+                        </p>
+
                     </div>
 
-                    <audio controls loop>
-                        <source src="lagu.mp3" type="audio/mpeg">
-                        
-                        Browser kamu tidak mendukung audio.
+
+                    <!-- FILE MUSIK -->
+                    <audio
+                        controls
+                        loop>
+
+                        <source
+                            src="lagu.mp3"
+                            type="audio/mpeg">
+
+                        Browser kamu tidak mendukung
+                        pemutar audio.
+
                     </audio>
+
 
                 </div>
 
@@ -303,40 +512,69 @@
         </section>
 
 
-        <!-- PESAN -->
-        <section id="pesan" class="content-section hidden">
+        <!-- =========================
+             PESAN RAHASIA
+        ========================== -->
 
-            <button class="back-button" onclick="kembali()">
+        <section
+            id="pesan"
+            class="content-section hidden">
+
+
+            <button
+                class="back-button"
+                onclick="kembali()">
+
                 ← Kembali
+
             </button>
+
 
             <div class="content-card secret-card">
 
-                <div class="section-icon">🎁</div>
+
+                <div class="section-icon">
+                    🎁
+                </div>
+
 
                 <p class="section-label">
                     ONE MORE THING
                 </p>
 
-                <h2>Secret Message</h2>
+
+                <h2>
+                    Secret Message
+                </h2>
+
 
                 <p class="description">
                     Ada satu pesan terakhir yang ingin
                     aku sampaikan.
                 </p>
 
-                <button class="main-button" onclick="surprise()">
+
+                <button
+                    class="main-button"
+                    onclick="surprise()">
+
                     ❤️ Buka Pesan
+
                 </button>
 
+
                 <div id="surpriseText"></div>
+
 
             </div>
 
         </section>
 
 
-        <!-- FOOTER -->
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
         <footer>
 
             <div class="footer-heart">
@@ -353,10 +591,14 @@
 
         </footer>
 
+
     </main>
 
+
+    <!-- JAVASCRIPT -->
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
